@@ -47,28 +47,28 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCg2JMfXoQoqSQ2gTCpXDKne2H7anEmUwk',
-    appId: '1:923713348152:web:967e26f6ff18e775f27ccd',
-    messagingSenderId: '923713348152',
-    projectId: 'my-ecommerce-app-123-bb538',
-    authDomain: 'my-ecommerce-app-123-bb538.firebaseapp.com',
-    storageBucket: 'my-ecommerce-app-123-bb538.firebasestorage.app',
+    apiKey: 'AIzaSyB0TUIpDhh3E4ovth1ndkltLJwqKIsrCuE',
+    appId: '1:1082678336293:web:333c6946b4a8d859a618cc',
+    messagingSenderId: '1082678336293',
+    projectId: 'my-ecommerce-app-123-d3f92',
+    authDomain: 'my-ecommerce-app-123-d3f92.firebaseapp.com',
+    storageBucket: 'my-ecommerce-app-123-d3f92.firebasestorage.app',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyB14JYYm3bDwIuHEj4d7daukR7w-MXzIFk',
-    appId: '1:923713348152:android:ea95865ea2208569f27ccd',
-    messagingSenderId: '923713348152',
-    projectId: 'my-ecommerce-app-123-bb538',
-    storageBucket: 'my-ecommerce-app-123-bb538.firebasestorage.app',
+    apiKey: 'AIzaSyDXxQKL6V8xeyV5D_eP3lfl2cXgJjidd4Y',
+    appId: '1:1082678336293:android:f45e55b5d3d2566aa618cc',
+    messagingSenderId: '1082678336293',
+    projectId: 'my-ecommerce-app-123-d3f92',
+    storageBucket: 'my-ecommerce-app-123-d3f92.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDxWazfREWeXUyH0nwdRQtc5iOGtCg8EVE',
-    appId: '1:923713348152:ios:048f57041bf4d82df27ccd',
-    messagingSenderId: '923713348152',
-    projectId: 'my-ecommerce-app-123-bb538',
-    storageBucket: 'my-ecommerce-app-123-bb538.firebasestorage.app',
+    apiKey: 'AIzaSyDawQPXtLGQQCwHRi7HqTbVRJYI4NLXV4U',
+    appId: '1:1082678336293:ios:02b09352c9e52b44a618cc',
+    messagingSenderId: '1082678336293',
+    projectId: 'my-ecommerce-app-123-d3f92',
+    storageBucket: 'my-ecommerce-app-123-d3f92.firebasestorage.app',
     iosBundleId: 'com.example.ecommerceApp',
   );
 }

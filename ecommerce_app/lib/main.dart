@@ -1,19 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_core/firebase_core.dart'; 
 import 'firebase_options.dart';
 
-Future<void> main() async {
-  // 1. Make the 'main' function asynchronous
-  WidgetsFlutterBinding.ensureInitialized();
+// 1. Import the native splash package
+import 'package:flutter_native_splash/flutter_native_splash.dart'; 
+import 'package:ecommerce_app/screens/auth_wrapper.dart'; 
 
-  // 2. Initialize Firebase
+
+void main() async {
+  
+  // 1. Preserve the splash screen
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  
+  // 2. Initialize Firebase (from Module 1)
   await Firebase.initializeApp(
-    // 3. Use the options from our generated file
-    options: DefaultFirebaseOptions.currentPlatform,
+    options: DefaultFirebaseOptions.currentPlatform, 
   );
-
-  // 4. Run the app
+  
+  // 3. Run the app (from Module 1)
   runApp(const MyApp());
+
+  // 4. Remove the splash screen after app is ready
+  FlutterNativeSplash.remove(); 
 }
 
 class MyApp extends StatelessWidget {
@@ -21,26 +30,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // 1. MaterialApp is the root of your app
     return MaterialApp(
-      // 2. Removes the "Debug" banner
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false, 
       title: 'eCommerce App',
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      // 3. A simple placeholder to show Firebase is connected
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('My E-Commerce App'),
-        ),
-        body: const Center(
-          child: Text(
-            'Firebase is Connected!',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-          ),
-        ),
-      ),
+      // 1. Change this line
+       home: const AuthWrapper(), 
     );
   }
 }
