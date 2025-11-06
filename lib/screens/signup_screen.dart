@@ -1,4 +1,3 @@
-import 'package:ecommerce_app/screens/login_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -41,6 +40,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
       );
+      // If sign up succeeds, pop this route so AuthWrapper's
+      // stream can show the HomeScreen at the root.
+      if (mounted) {
+        Navigator.of(context).pop();
+      }
       // AuthWrapper will handle navigation on auth state change
     } on FirebaseAuthException catch (e) {
       String message = 'An error occurred';
@@ -146,12 +150,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                 TextButton(
                   onPressed: () {
-                    // 3. Navigate BACK to the Login screen
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) => const LoginScreen(),
-                      ),
-                    );
+                    // Navigate back to the previous screen (Login)
+                    Navigator.of(context).pop();
                   },
                   child: const Text("Already have an account? Login"),
                 ),

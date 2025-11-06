@@ -179,8 +179,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 // 7. The "Sign Up" toggle button
                 TextButton(
                   onPressed: () {
-                    // 8. Navigate to the Sign Up screen
-                    Navigator.of(context).pushReplacement(
+                    // Navigate to the Sign Up screen using push so
+                    // AuthWrapper can control which root screen shows
+                    // and we can pop back after sign-up.
+                    Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) => const SignUpScreen(),
                       ),
